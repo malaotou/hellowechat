@@ -16,11 +16,8 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.fireService.getData().subscribe(
-      data=>{
-        this.notes$=data.map(item=>item.payload);
-      }
-    )
+    this.fireService.getData();
+    this.fireService.createData();
   }
 
 }
