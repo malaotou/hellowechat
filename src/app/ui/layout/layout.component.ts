@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class LayoutComponent implements OnInit {
   notes$: Observable<any[]>;
+  current:string=Date.now.toString();
   constructor(db: AngularFirestore) {
     this.notes$ = db.collection('notes').valueChanges();
   }
