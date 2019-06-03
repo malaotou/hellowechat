@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-layout',
@@ -7,10 +8,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
-  notes$: Observable<any[]>;
+  notes$: Observable<{}>;
   current:string=Date.now.toString();
-  constructor(db: AngularFirestore) {
-    this.notes$ = db.collection('notes').valueChanges();
+  constructor(store: AngularFirestore,db:AngularFireDatabase) {
+    this.notes$ =db.object('notes').valueChanges();
   }
 
   ngOnInit() {
