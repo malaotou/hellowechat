@@ -1,3 +1,20 @@
 <app-header></app-header>
 <p> layout works!
 </p>
+<div class="addNote">
+  <button mat-fab>
+    <mat-icon>add circle</mat-icon>
+  </button>
+</div>
+<div class="messageinput">
+  <form class="example-form">
+
+    <mat-form-field class="example-full-width">
+      <input matInput #message maxlength="256" placeholder="Message">
+      <!-- <mat-hint align="start"></mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+   -->
+    </mat-form-field>
+
+  </form>
+</div>
